@@ -23,7 +23,7 @@ public class Monumento {
     private Long id;
     private String pais;
     private String ciudad;
-    private double [] localizacion;
+    private double[] localizacion;
     private String nombre;
     @Lob
     private String descripcion;
