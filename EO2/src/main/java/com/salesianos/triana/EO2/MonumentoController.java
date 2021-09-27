@@ -18,13 +18,25 @@ public class MonumentoController {
     @GetMapping("")
     public List<Monumento> findAll() {
         return repository.findAll();
+        
+        //Este método también serviría, El método ResponseEntity nos surte de varios métodos para responder con los códigos que 
+        //necesitemos. 
+        // return ResponseEntity.ok()
+                              //.body(repository.findAll());
     }
 
     //Este método devuelve una sola entidad de monumento dado un id que pasamos como variable, en caso de no encotrarlo
     //devuelve null.
     @GetMapping("/{id}")
     public Monumento findOne(@PathVariable("id") Long id) {
+        //Con PathVariable marcamos la variable que solicitamos o que nos proporciona el cliente, podríamos aportarle 
+        //otro nombre que no fuera "id", dentro de esos mismos paréntesis, independientemente del nombre que proporcionemos
+        //a la varible con la que trabajemos en el cuerpo del método.
         return repository.findById(id).orElse(null);
+        
+        //Siguiendo con los métodos de ResponseEntity podríamos usar este de aquí. 
+        //of devuelve un optional genérico, de está forma devuelve un código 200 y el monumento con el id solicitado.
+        //return ResponseEntity.of(repository.findById(id));
     }
 
     //Este método devuelve un mensaje con código 201, creado correctamente
