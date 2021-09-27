@@ -30,6 +30,8 @@ public class MonumentoController {
     //Este método devuelve un mensaje con código 201, creado correctamente
     // si guarda el monumento que aporta el cliente en el repositorio.
     @PostMapping("")
+    //Si devolvemos el tipo de datos que hemos creado el código de la respuesta sería 200, pero necesitamos que sea
+    //201, por eso no podemos usar directamente la clase modelo y debemos usar la clase ResponseEntity. (ver documentación).
     public ResponseEntity<Monumento> create(@RequestBody Monumento monumento) {
 
         return ResponseEntity

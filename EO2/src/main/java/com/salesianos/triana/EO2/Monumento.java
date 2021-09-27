@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Lob;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 //Anotaciones para generar la entidad y los constructores, getters y setters con lombok.
 @Entity
@@ -25,6 +22,9 @@ public class Monumento {
     private String ciudad;
     private double[] localizacion;
     private String nombre;
+
+    //@Column(length = 1000) otra forma de aumentar el tamaño del tipo de dato.
+    //@Column(columnDefinition = "TEXT") otra forma más de cambiar el tipo de dato en la base de datos.
     @Lob
     private String descripcion;
     @Lob
