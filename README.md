@@ -1,13 +1,17 @@
-# UD1-EO2-NavalManuel
+# Monument repository exercise
 
-<!-- navalcode:historical-context -->
-**Historical learning project · Proyecto histórico de aprendizaje**
+[English](#overview) · [Español](#resumen)
 
-Java exercise with monument model, repository and controller. This presentation update does not claim a current build or production readiness. Original documentation and attribution are retained below when present.
+## Overview
 
-**Español.** Ejercicio Java con modelo de monumentos, repositorio y controlador. Esta actualización de presentación no acredita compilación actual ni uso en producción. Se conserva la documentación y atribución originales cuando existen.
+Java exercise with monument model, repository and controller.
 
-[Current mobile portfolio / Portfolio móvil actual](https://passkeys.navalcode.org/portfolio/) · [GitHub profile](https://github.com/navalcode)
+An earlier learning exercise. The source is preserved with its original toolchain; compatibility with current versions has not been revalidated.
 
----
+## Resumen
 
+Ejercicio Java con modelo de monumentos, repositorio y controlador.
+
+Ejercicio de una etapa anterior de aprendizaje. Se conserva con sus herramientas originales; no se ha vuelto a validar con versiones actuales.
+
+[More of my work · Más proyectos](https://github.com/navalcode)
