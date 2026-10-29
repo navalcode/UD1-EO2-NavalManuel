@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -26,13 +27,14 @@ public class MonumentoController {
     }
 
     //Este método devuelve una sola entidad de monumento dado un id que pasamos como variable, en caso de no encotrarlo
-    //devuelve null.
+    //devuelve 404.
     @GetMapping("/{id}")
     public Monumento findOne(@PathVariable("id") Long id) {
         //Con PathVariable marcamos la variable que solicitamos o que nos proporciona el cliente, podríamos aportarle 
         //otro nombre que no fuera "id", dentro de esos mismos paréntesis, independientemente del nombre que proporcionemos
         //a la varible con la que trabajemos en el cuerpo del método.
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "monument_not_found"));
         
         //Siguiendo con los métodos de ResponseEntity podríamos usar este de aquí. 
         //of devuelve un optional genérico, de está forma devuelve un código 200 y el monumento con el id solicitado.
@@ -45,6 +47,9 @@ public class MonumentoController {
     //Si devolvemos el tipo de datos que hemos creado el código de la respuesta sería 200, pero necesitamos que sea
     //201, por eso no podemos usar directamente la clase modelo y debemos usar la clase ResponseEntity. (ver documentación).
     public ResponseEntity<Monumento> create(@RequestBody Monumento monumento) {
+        if (monumento.getId() != null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "id_is_generated");
+        }
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
@@ -56,7 +61,8 @@ public class MonumentoController {
     public Monumento edit(@RequestBody Monumento monumento, @PathVariable Long id) {
         //Primero buscamos por id el monumento que queremos editar y lo guardamos en una variable temporal.
 
-        Monumento antiguo = repository.findById(id).orElse(null);
+        Monumento antiguo = repository.findById(id).orElseThrow(() ->
+                new ResponseStatusException(HttpStatus.NOT_FOUND, "monument_not_found"));
 
         //A continuación debemos setear las propiedades del monumento antiguo con los nuevos datos.
 
@@ -76,6 +82,9 @@ public class MonumentoController {
     public ResponseEntity<?> deleteOne(@PathVariable("id") Long id) {
 
         //Borramos del respositorio el monumento dado su id
+        if (!repository.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "monument_not_found");
+        }
         repository.deleteById(id);
         //Posteriormente lanzamos un mensaje al cliente, en este caso debemos mandar un código 204.
         return ResponseEntity.noContent().build();

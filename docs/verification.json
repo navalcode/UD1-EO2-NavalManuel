@@ -1,0 +1,30 @@
+{
+  "kind": "recorded_local_result",
+  "checked_on": "2026-10-29",
+  "platform": "macOS",
+  "jdk": {
+    "version": "17.0.14",
+    "vendor": "Amazon.com Inc."
+  },
+  "source_baseline": "fb5a064ca84547746baa8f007414039cbde12e57",
+  "checks": [
+    {
+      "module": "EO2",
+      "command": "sh ./mvnw verify",
+      "tests": {
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "log_sha256": "0bae9425e46aa903f16c2113a565c44b68cbaa2648fa7f121a3728048888d77e",
+      "junit_xml_sha256": [
+        "c10b1d713a8af588115fdd652639e73ae6dfcb26617bd94fffaf17c8f7076c86",
+        "1263fdb220d651da5b16557ecc5dceddc0b90414db04b3675073b388d921414c"
+      ]
+    }
+  ],
+  "test_total": 7,
+  "hosted_ci_run": null,
+  "scope": "Original Maven pins; local JDK17 tests/package with isolated Maven settings/repository. No hosted/production result is implied."
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "path": ".gitignore",
+    "sha256": "d9e4dde6ac95bdecfc0e037612ddcc901eb8d87b139d3acb70ae8c6ac385a535"
+  },
+  {
+    "path": "DESIGN.md",
+    "sha256": "bc23ef53cfbeaaf3847f406b59dc1ed7394eeef447d5e979341a12ce28c35e92"
+  },
+  {
+    "path": "EO2/src/main/java/com/salesianos/triana/EO2/MonumentoController.java",
+    "sha256": "009aa02c8ce5f0a114be18a3f301b8da5e4b8ab006b1a423bc87dadf8bc212c5"
+  },
+  {
+    "path": "EO2/src/test/java/com/salesianos/triana/EO2/MonumentHttpJourneyTest.java",
+    "sha256": "d8d83d58b747ef28224ee0072e09e17961a5d93d2dc5eb080abcbac4152d05bf"
+  },
+  {
+    "path": "README.es.md",
+    "sha256": "effe296c73217856bb5469059772daca35413535224389e4e514479bd138094b"
+  },
+  {
+    "path": "README.md",
+    "sha256": "93154aed0056fce0437ba2c5d2a94aeb4fd36084aee835897d84f4eb63c9a75b"
+  },
+  {
+    "path": "THIRD_PARTY.md",
+    "sha256": "b5d04f1ad6b5210da1877f546dc16f116f94e857d5f0069d739b4cbd0a62b09e"
+  },
+  {
+    "path": "docs/verification.json",
+    "sha256": "1fbe4780befbd203b80585ca6bc7f2e90980fe052e901510abd2845d4fe6c8ff"
+  }
+]
